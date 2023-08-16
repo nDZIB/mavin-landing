@@ -6,5 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'production-landing';
+  artists: any = [
+    {
+      name: 'Keneth Tim',
+      bio: 'Nothing specific. Life just doesn\'t just happen',
+      avatar: 'assets/artist_x.png'
+    },
+
+    {
+      name: 'Jane Doe',
+      bio: 'Nothing specific. Life just doesn\'t just happen',
+      avatar: 'assets/artist_y.png'
+    },
+
+    {
+      name: 'Pet M',
+      bio: 'Nothing specific. Life just doesn\'t just happen',
+      avatar: 'assets/artist_z.png'
+    }
+  ]
 }
