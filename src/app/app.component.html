@@ -2,17 +2,28 @@
   <img src="assets/logo.png" alt="logo" class="logo">
 
   <ul class="nav">
-    <li><a class="nav-item" href="#">Home</a></li>
-    <li><a class="nav-item" href="#">About</a></li>
-    <li><a class="nav-item" href="#">Services</a></li>
-    <li><a class="nav-item" href="#">Gallery</a></li>
-    <li><a class="nav-item" href="#">Artists</a></li>
-    <li><a class="nav-item" href="#">Blog</a></li>
-    <li><a class="nav-item" href="#">Career</a></li>
+    <li *ngFor="let nav of navs"><a [routerLinkActiveOptions]="{exact: nav.exact}" routerLinkActive="nav-active" [href]="nav.route" class="nav-item" href="#">{{nav.label}}</a></li>
   </ul>
 </header>
 
-<section class="section hero"></section>
+<section class="section hero">
+  <div class="hero-content">
+    <div class="hero-images">
+      <img *ngFor="let artist of faceArtists; let i = index" [ngClass]="{'active-slide': currentStep === i+1}" [class]="'hero-image artist-'+(i+1)" [src]="artist" alt="artist">
+    </div>
+
+    <div class="hero-text">
+      <p class="welcome">Welcome</p>
+      <h1 class="name"><span class="focus-text">Mavin</span> Studios</h1>
+
+      <p class="mission">We bring good music that will thrill your souls</p>
+    </div>
+  </div>
+  
+  <div class="steps">
+    <div *ngFor="let step of steps" class="step" [ngClass]="{'active-step': currentStep === step}" ></div>
+  </div>
+</section>
 
 <section class="section about">
   <div class="player"></div>

@@ -8,6 +8,115 @@
     margin: 0 auto;
 }
 
+.steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    margin-top: 2rem;
+}
+
+
+.active-step {
+    width: 5rem !important;
+}
+.step {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 400rem;
+
+    background-color: $white;
+}
+
+.hero-content {
+    @include pretty-center();
+    max-width: 65vw;
+
+    display: flex;
+    justify-content: space-between;
+    color: white;
+
+    gap: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 0;
+}
+
+.hero-text {
+    max-width: 20rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 7.5rem;
+
+    .focus-text {
+        font-size: 6rem;
+
+        color: transparent;
+
+        background-clip: text;
+        background-image: linear-gradient(to right, $accent, $white);
+    }
+
+    .name {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .mission {
+        padding: .4rem;
+        margin-top: 1.6rem;
+        border: .01rem solid rgba($white, .3);
+        border-right: none;
+        border-left: none;
+        line-height: 1.4;
+        font-size: 1rem;
+    }
+}
+
+.hero-images {
+    display: flex;
+    align-items: center;
+    min-height: 65vh;
+}
+
+.hero-image {
+    width: 25rem;
+    height: 30rem;
+    position: relative;
+}
+
+.artist-1 {
+    margin-top: 1rem;
+    height: 28rem;
+}
+
+.artist-2 {
+    margin-top: 1rem;
+}
+
+.artist-3 {
+    margin-top: -1rem;
+}
+
+.artist-4 {
+    margin-top: -3rem;
+}
+
+.active-slide {
+    clip-path: polygon(0 2%, 100% 0, 100% 95%, 30% 100%, 0 100%);
+    z-index: 10;
+    transform: scale(1.2);
+    box-shadow: 0 0 10rem 1rem rgba($secondary, .5);
+}
+
+.hero-image:not(.artist-1) {
+    margin-left: -15rem;
+}
+
+.hero-image:not(.active-slide) {
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
 .section {
     min-height: 85vh;
 }
@@ -38,9 +147,11 @@
 
         padding: .1rem .5rem;
         border: .1em solid transparent;
+    }
 
-        color: $accent;
-        border-color: currentColor;
+    &-active {
+        color: $accent !important;
+        border-color: currentColor !important;
     }
 }
 
